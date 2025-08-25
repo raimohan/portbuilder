@@ -4,9 +4,9 @@ import { Sparkles, Check, Clock, Smartphone } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="home" className="pt-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+    <section id="home" className="bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[calc(100vh-4rem)] flex items-center">
+        <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center w-full">
           {/* Left Content */}
           <div className="mb-12 lg:mb-0 animate-fade-in">
             <Badge className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-sm font-medium text-gray-700 mb-6 border-none">
@@ -27,7 +27,7 @@ export default function Hero() {
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button 
-                onClick={() => window.location.href = "/api/login"}
+                onClick={() => window.location.href = "/auth"}
                 size="lg"
                 className="bg-black text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-800 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
                 data-testid="button-build-portfolio"
@@ -67,7 +67,7 @@ export default function Hero() {
           
           {/* Right Content - Portfolio Preview */}
           <div className="relative animate-slide-up floating">
-            <div className="relative">
+            <div className="relative transition-transform duration-700 ease-out will-change-transform lg:scale-[1.1] xl:scale-[1.25]">
               <img 
                 src="https://i.postimg.cc/qB2YH2gP/Chat-GPT-Image-Aug-24-2025-08-53-01-PM.png"
                 alt="Portfolio Builder Preview" 
