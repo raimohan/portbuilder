@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
 import { Plus, ExternalLink, Settings, Eye } from "lucide-react";
-import type { Portfolio } from "@shared/schema";
+import type { Portfolio } from "@/types";
 
 export default function Home() {
   const { toast } = useToast();
