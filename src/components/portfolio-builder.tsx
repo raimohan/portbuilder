@@ -34,7 +34,7 @@ import {
   Rocket
 } from "lucide-react";
 
-import type { Portfolio, Project, Skill, Template } from "@shared/schema";
+import type { Portfolio, Project, Skill, Template } from "@/types";
 
 interface PortfolioBuilderProps {
   portfolioId?: string;
@@ -84,27 +84,27 @@ export default function PortfolioBuilder({ portfolioId }: PortfolioBuilderProps)
   const steps = ["Profile", "Projects", "Skills", "Template", "Publish"];
 
   // Fetch existing portfolio if editing
-  const { data: portfolio, isLoading: portfolioLoading } = useQuery({
+  const { data: portfolio, isLoading: portfolioLoading } = useQuery<Portfolio>({
     queryKey: [`/api/portfolios/${portfolioId}`],
     enabled: !!portfolioId,
     retry: false,
   });
 
   // Fetch templates
-  const { data: templates } = useQuery({
+  const { data: templates } = useQuery<Template[]>({
     queryKey: ["/api/templates"],
     retry: false,
   });
 
   // Fetch projects if editing
-  const { data: existingProjects } = useQuery({
+  const { data: existingProjects } = useQuery<Project[]>({
     queryKey: [`/api/portfolios/${portfolioId}/projects`],
     enabled: !!portfolioId,
     retry: false,
   });
 
   // Fetch skills if editing
-  const { data: existingSkills } = useQuery({
+  const { data: existingSkills } = useQuery<Skill[]>({
     queryKey: [`/api/portfolios/${portfolioId}/skills`],
     enabled: !!portfolioId,
     retry: false,
