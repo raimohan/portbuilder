@@ -150,7 +150,7 @@ export default function PortfolioBuilder({ portfolioId }: PortfolioBuilderProps)
     if (portfolio) {
       setIsEditing(true);
       setIsPublished(portfolio.isPublished || false);
-      setSelectedTemplate(portfolio.templateId);
+      setSelectedTemplate(portfolio.templateId || "");
       
       profileForm.reset({
         title: portfolio.title || "",
