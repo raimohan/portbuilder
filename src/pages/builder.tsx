@@ -22,7 +22,7 @@ export default function Builder() {
         variant: "destructive",
       });
       setTimeout(() => {
-        window.location.href = "/api/login";
+        setLocation("/auth");
       }, 500);
       return;
     }
