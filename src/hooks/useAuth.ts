@@ -10,8 +10,15 @@ import {
 } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
 
+export interface AppUser extends User {
+  firstName?: string;
+  lastName?: string;
+  profileImageUrl?: string;
+  bio?: string;
+}
+
 interface AuthState {
-  user: User | null;
+  user: AppUser | null;
   isAuthenticated: boolean;
   isLoading: boolean;
 }
