@@ -3,8 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
+import type { Template } from "@/types";
+
 export default function Templates() {
-  const { data: templates, isLoading } = useQuery({
+  const { data: templates, isLoading } = useQuery<Template[]>({
     queryKey: ["/api/templates"],
     retry: false,
   });
@@ -35,7 +37,7 @@ export default function Templates() {
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {templates?.map((template: any) => (
+            {templates?.map((template: Template) => (
               <Card key={template.id} className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                 <img 
                   src={template.previewImage || "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop"} 
