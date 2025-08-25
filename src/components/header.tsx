@@ -31,7 +31,7 @@ export default function Header() {
               className="text-2xl font-bold text-black hover:text-gray-800 transition-colors"
               data-testid="button-logo"
             >
-              Portfolio Builder
+              PortGenie
             </button>
           </div>
           
