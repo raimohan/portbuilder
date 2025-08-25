@@ -5,11 +5,13 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Mail, MapPin } from "lucide-react";
 
+import type { PublicPortfolio } from "@/types";
+
 export default function Portfolio() {
   const [match, params] = useRoute("/:slug");
   const slug = params?.slug;
 
-  const { data: portfolio, isLoading, error } = useQuery({
+  const { data: portfolio, isLoading, error } = useQuery<PublicPortfolio>({
     queryKey: [`/api/public/portfolios/${slug}`],
     enabled: !!slug,
     retry: false,
