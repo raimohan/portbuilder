@@ -29,7 +29,7 @@ export default function Home() {
     }
   }, [isAuthenticated, isLoading, toast]);
 
-  const { data: portfolios, isLoading: portfoliosLoading } = useQuery({
+  const { data: portfolios, isLoading: portfoliosLoading } = useQuery<Portfolio[]>({
     queryKey: ["/api/portfolios"],
     enabled: isAuthenticated,
     retry: false,
